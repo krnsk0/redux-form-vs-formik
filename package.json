@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "template for a node/express backend and react frontend with a parcel-middleware build process ",
   "scripts": {
-    "reinstall": "rm -rf node_modules && npm install",
+    "reinstall": "rm -rf node_modules package-lock.json && npm install",
     "start": "nodemon server/index.js --watch server/"
   },
   "author": "jkurinsky@gmail.com",
@@ -30,7 +30,7 @@
     "react-redux": "^7.1.3",
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8",
-    "redux-form": "^8.2.6"
+    "redux-form": "^5.3.6"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
