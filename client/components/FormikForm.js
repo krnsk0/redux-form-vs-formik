@@ -1,4 +1,5 @@
 import React from 'react';
+import { Error } from './';
 
 const FormikForm = () => {
   return (
@@ -21,6 +22,7 @@ const FormikForm = () => {
           <input type="radio" name="color" id="blue" value="blue" />
           <label htmlFor="red">blue</label>
         </div>
+        <button type="submit">Submit</button>
       </form>
     </React.Fragment>
   );
