@@ -1,0 +1,38 @@
+{
+  "name": "stencil",
+  "version": "1.0.0",
+  "description": "template for a node/express backend and react frontend with a parcel-middleware build process ",
+  "scripts": {
+    "reinstall": "rm -rf node_modules && npm install",
+    "start": "nodemon server/index.js --watch server/"
+  },
+  "author": "jkurinsky@gmail.com",
+  "port": 3333,
+  "parcel": {
+    "autoInstall": false,
+    "hmr": true
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "minify"
+    ],
+    "plugins": []
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.5.1",
+    "babel-preset-react": "^6.24.1",
+    "nodemon": "^1.19.1",
+    "parcel-bundler": "^1.12.3"
+  }
+}
