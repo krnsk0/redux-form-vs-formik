@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from 'redux';
-import { reducer as FormReducer } from 'redux-form';
+import { reducer as FormReducerV5 } from 'redux-form-v5';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const rootReducer = combineReducers({
-  form: FormReducer,
+  formV5: FormReducerV5,
 });
 
 export const store = createStore(rootReducer, composeWithDevTools());

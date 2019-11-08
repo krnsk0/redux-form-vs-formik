@@ -1,6 +1,6 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
-import { Error } from './';
+import { Error } from '.';
 
 const validate = values => {
   const errors = {};
@@ -18,55 +18,38 @@ const validate = values => {
   return errors;
 };
 
-class ReduxForm extends React.Component {
+class ReduxFormV6Plus extends React.Component {
   submit(values) {
     console.log('submitted! form values:');
     console.log(values);
   }
 
   render() {
-    const {
-      handleSubmit,
-      fields: { name, phone, color },
-      errors,
-      values,
-    } = this.props;
+    const { handleSubmit } = this.props;
     console.log('this.props: ', this.props);
 
     return (
       <React.Fragment>
-        <div>Redux-Form</div>
+        <div>Redux-Form V6 Plus</div>
         <form onSubmit={handleSubmit(this.submit)}>
           <div>
             <label htmlFor="name">name</label>
-            <input type="text" name="name" {...name} />
+            <input type="text" name="name" />
           </div>
           <div>
             <label htmlFor="phone">phone</label>
-            <input type="text" name="phone" {...phone} />
+            <input type="text" name="phone" />
           </div>
           <div>
             <label htmlFor="color">favorite color</label>
             <br />
-            <input
-              type="radio"
-              {...color}
-              value="red"
-              checked={color.value === 'red'}
-            />
+            <input type="radio" value="red" />
             <label htmlFor="red">red</label>
-            <input
-              type="radio"
-              {...color}
-              value="blue"
-              checked={color.value === 'blue'}
-            />
+            <input type="radio" value="blue" />
             <label htmlFor="red">blue</label>
           </div>
           <button type="submit">Submit</button>
         </form>
-        <Error>{errors}</Error>
-        <div>{JSON.stringify(values)}</div>
       </React.Fragment>
     );
   }
@@ -74,6 +57,5 @@ class ReduxForm extends React.Component {
 
 export default reduxForm({
   form: 'testForm',
-  fields: ['name', 'phone', 'color'],
   validate,
-})(ReduxForm);
+})(ReduxFormV6Plus);
